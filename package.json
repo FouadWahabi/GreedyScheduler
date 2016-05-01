@@ -1,0 +1,34 @@
+{
+  "name": "GreedyScheduler",
+  "description": "GreedyScheduler app",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "",
+  "dependencies": {
+    "bms-mca-token-validation-strategy": "2.x",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "loopback": "^2.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^2.1.0",
+    "loopback-connector-cloudant": "^1.0.4",
+    "loopback-connector-mysql": "^2.2.0",
+    "loopback-datasource-juggler": "^2.39.0",
+    "node-uuid": "^1.4.7",
+    "passport": "^0.3.2",
+    "requestify": "^0.1.17",
+    "schema-validator": "^3.3.0",
+    "serve-favicon": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibm-bluemix-mobile-services/bms-hellotodo-strongloop.git"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "license": "Apache-2.0"
+}
