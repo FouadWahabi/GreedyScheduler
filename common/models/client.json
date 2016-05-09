@@ -1,0 +1,26 @@
+{
+  "name": "client",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string"
+    },
+    "schedulerPass": {
+      "type": "string"
+    },
+    "config": {
+      "type": "object"
+    },
+    "state": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
