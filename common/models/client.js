@@ -8,11 +8,19 @@ module.exports = function(Client) {
   Client.registerClient = function(userId, schedulerPass, cb) {
     // TODO created users
     console.log(userId + "   "  + schedulerPass + " well done !");
-    if(userId && schedulerPass) {
-      Client.create({userId: userId, schedulerPass: schedulerPass, config: null, state: null}, cb);
-    } else {
-      cb(helpers.CLIENT_CREATION_FAILED, {});
-    }
+    Client.findOne({where: {userId: userId}}, function(err, user) {
+      if(!err && user != null) {
+        user.schedulerPass = schedulerPass;
+        user.save();
+        cb(null, user);
+      } else {
+        if(userId && schedulerPass) {
+          Client.create({userId: userId, schedulerPass: schedulerPass, config: null, state: null}, cb);
+        } else {
+          cb(helpers.CLIENT_CREATION_FAILED, {});
+        }
+      }
+    })
   }
 
   Client.remoteMethod('registerClient',   {
@@ -115,11 +123,11 @@ module.exports = function(Client) {
 
   var bestTask = function(not_fixed_tasks, config, state, date, duration) {
     var bestTask = null;
-    var result = 0;
+    var result = 1/-0;
     for (var i = 0; i < not_fixed_tasks.length; i++) {
       var tmpResult = taskObjectif(not_fixed_tasks[i], config, state, date, duration);
       console.log(not_fixed_tasks[i].vars.label, tmpResult);
-      if(tmpResult >= result) {
+      if(tmpResult > result) {
         bestTask = not_fixed_tasks[i];
         result = tmpResult;
       }
