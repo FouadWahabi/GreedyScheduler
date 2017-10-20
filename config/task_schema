@@ -1,0 +1,48 @@
+{
+	"label": {
+		"type": "string"
+	},
+	"deadline": {
+		"type": "number"
+	},
+	"duration": {
+		"type": "numer"
+	},
+	"date": {
+		"type": "number"
+	},
+	"done": {
+		"type": "boolean"
+	},
+	"constraint": {
+		"type": "array",
+		"items": {
+			"type": "object",
+			"properties": {
+				"var": "string",
+				"type": "number",
+				"value": "number"
+			},
+			"required": ["var", "type", "value"]
+		}
+	},
+	"variation": {
+		"type": "array",
+		"items": {
+			"type": "object",
+			"properties": {
+				"var": {
+					"type": "string"
+				},
+				"value": {
+					"type": "number"
+				},
+				"type": {
+					"type": "number"
+				}
+			},
+			"required": ["var", "value", "type"]
+		}
+	},
+	"required": ["label", "deadline", "duration", "done", "variation", "constraint"]
+}

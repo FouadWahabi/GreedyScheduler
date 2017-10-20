@@ -1,0 +1,42 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "var": {
+        "type": "string"
+      },
+      "desc": {
+        "type": "object",
+        "properties": {
+          "quest": {
+            "type": "string"
+          },
+          "resps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "resp": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                }
+              },
+              "required": ["resp", "value"]
+            }
+          }
+        },
+        "required": ["quest", "resps"]
+      },
+      "default": {
+        "type": "number"
+      },
+      "coefficient":{
+        "type": "number"
+      }
+    },
+    "required": ["var", "default", "coefficient"]
+  }
+}

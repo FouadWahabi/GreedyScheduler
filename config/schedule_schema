@@ -1,0 +1,18 @@
+{
+  "date": {
+      "type": "number"
+  },
+  "task": {
+    "type": "array",
+    "items": {
+      "item": "object",
+      "properties": {
+        "id": "string",
+        "label": "string",
+        "duration": "number"
+      },
+      "required": ["id", "label", "duration"]
+    }
+  },
+  "required": ["date", "task"]
+}

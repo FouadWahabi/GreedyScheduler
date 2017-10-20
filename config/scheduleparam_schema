@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "start-date": {
+      "type": "number"
+    },
+    "end-date": {
+      "type": "number"
+    }
+  },
+  "required": ["start-date", "end-date"]
+}
